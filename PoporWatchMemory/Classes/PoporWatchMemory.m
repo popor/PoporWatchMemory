@@ -143,7 +143,9 @@ static PoporWatchMemoryBlock WarmBlock;
     
     dispatch_async(dispatch_get_main_queue(), ^{
         if (WarmBlock) {
-            WarmBlock(result, desc);
+            WarmBlock(result, desc, className, pointer);
+        } else {
+            NSLog(@"\n-----------------------\n\n%@\n\n-----------------------", desc);
         }
     });
 }

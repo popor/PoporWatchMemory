@@ -28,11 +28,15 @@
     NSArray * array = @[@"UINavigationController", @"UIEditingOverlayViewController", @"UIInputWindowController",
                         @"UICompatibilityInputViewController", @"UIPredictionViewController",
     ];
-    [PoporWatchMemory watchVcIgnoreArray:array warn:^(NSArray<PoporWatchMemoryEntity *> * _Nonnull array, NSMutableString * description) {
+    
+    [PoporWatchMemory watchVcIgnoreArray:array warn:^(NSArray<PoporWatchMemoryEntity *> * _Nonnull array, NSMutableString * _Nonnull description, NSString * _Nonnull className, NSString * _Nonnull pointer) {
         weakSelf.infoTV.text = description;
         
         NSLog(@": %@", description);
     }];
+    
+    // 或者
+    // [PoporWatchMemory watchVcIgnoreArray:array];
     
     self.title = @"Root";
     

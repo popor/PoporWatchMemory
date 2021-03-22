@@ -19,9 +19,7 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'PoporWatchMemory'
 
-[PoporWatchMemory watchVcIgnoreArray:@[@"UINavigationController", @"UIEditingOverlayViewController", @"UIInputWindowController"] warn:^(NSArray<PoporWatchMemoryEntity *> * _Nonnull array, NSMutableString * description) {
-    NSLog(@": %@", description); 
-}];
+[PoporWatchMemory watchVcIgnoreArray:@[@"UINavigationController", @"UIEditingOverlayViewController", @"UIInputWindowController"]];
 
 ```
 

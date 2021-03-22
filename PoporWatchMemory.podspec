@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PoporWatchMemory'
-  s.version          = '1.0'
+  s.version          = '1.1'
   s.summary          = '基于 UIViewController 的内存泄露监测, 可以设定忽略的class, '
 
   s.homepage         = 'https://gitee.com/popor/PoporWatchMemory'

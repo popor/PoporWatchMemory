@@ -32,7 +32,7 @@
     [PoporWatchMemory watchVcIgnoreArray:array warn:^(NSArray<PoporWatchMemoryEntity *> * _Nonnull array, NSMutableString * _Nonnull description, NSString * _Nonnull className, NSString * _Nonnull pointer) {
         weakSelf.infoTV.text = description;
         
-        NSLog(@": %@", description);
+        NSLog(@": %@ \n\n\n.", description);
     }];
     
     // 或者

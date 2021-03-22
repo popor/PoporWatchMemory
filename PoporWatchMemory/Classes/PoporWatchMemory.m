@@ -10,6 +10,7 @@
 #import "UIViewController+PoporWatchMemory.h"
 
 #import <objc/runtime.h>
+//#import <malloc/malloc.h>
 
 static NSMutableDictionary * VcPointerDic;   // 指针地址Class
 static NSArray             * VcIgnoreArray;
@@ -80,7 +81,14 @@ static PoporWatchMemoryBlock WarmBlock;
         return;
     }
     
-    VcPointerDic[pointer] = NSStringFromClass(self.class);
+    {
+        PoporWatchMemoryEntity * entity = [PoporWatchMemoryEntity new];
+        entity.className = NSStringFromClass(self.class);
+        entity.pointer   = pointer;
+        //entity.instanceSize = class_getInstanceSize(self.class);
+        
+        VcPointerDic[pointer] = entity;
+    }
 }
 
 - (void)viewDidDisappear_watchMemory:(BOOL)animated {
@@ -88,11 +96,15 @@ static PoporWatchMemoryBlock WarmBlock;
     
     NSString * pointer   = [NSString stringWithFormat:@"%p", self];
     NSString * className = NSStringFromClass(self.class);
-    if ([PoporWatchMemory isIgnoreWatchVCName:className]) {
+    
+    PoporWatchMemoryEntity * entity = VcPointerDic[pointer];
+    if (!entity) {
         return;
     }
     
     UIViewController * vc = (UIViewController *)self;
+    //entity.mallocSize = malloc_size((__bridge const void *)self);
+    
     if (vc.isWillDeallocWhenDisappear_PoporWatchMemory) {
         __weak typeof(vc) weakVC = vc;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -105,6 +117,7 @@ static PoporWatchMemoryBlock WarmBlock;
     }
 }
 
+#pragma mark - tool
 + (BOOL)isIgnoreWatchVCName:(NSString *)className {
     if ([VcIgnoreArray containsObject:className]) {
         return YES;
@@ -113,22 +126,12 @@ static PoporWatchMemoryBlock WarmBlock;
     }
 }
 
-#pragma mark - tool
 + (void)checkDic:(NSMutableDictionary *)dic className:(NSString *)className pointer:(NSString *)pointer {
     NSMutableString * desc = [NSMutableString new];
     [desc appendFormat:@"❌❌\n[%@]异常, 地址: %@, 剩余的vc总数: %li", className, pointer, dic.allKeys.count];
     
-    NSMutableArray * array = [NSMutableArray new];
-    NSArray * keyArray = dic.allKeys;
-    for (NSString * pointer in keyArray) {
-        PoporWatchMemoryEntity * entity = [PoporWatchMemoryEntity new];
-        entity.className = dic[pointer];
-        entity.pointer   = pointer;
-        
-        [array addObject:entity];
-    }
-    
-    NSArray * result = [array sortedArrayUsingComparator:^NSComparisonResult(PoporWatchMemoryEntity * _Nonnull obj1, PoporWatchMemoryEntity * _Nonnull obj2) {
+    NSArray * originArray = dic.allValues;
+    NSArray * result = [originArray sortedArrayUsingComparator:^NSComparisonResult(PoporWatchMemoryEntity * _Nonnull obj1, PoporWatchMemoryEntity * _Nonnull obj2) {
         return [obj1.className compare:obj2.className];
     }];
     for (PoporWatchMemoryEntity * entity in result) {
@@ -139,6 +142,8 @@ static PoporWatchMemoryBlock WarmBlock;
         } else {
             [desc appendFormat:@"\n%@ \t: %@", entity.className, entity.pointer];
         }
+        
+        //[desc appendFormat:@"\n%@ \t: %@, size:%zd", entity.className, entity.pointer, entity.mallocSize];
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{

@@ -27,6 +27,9 @@ typedef void(^PoporWatchMemoryBlock)(NSArray<PoporWatchMemoryEntity *> * array, 
 @interface PoporWatchMemoryEntity : NSObject
 @property (nonatomic, copy  ) NSString * className;
 @property (nonatomic, copy  ) NSString * pointer;
+//@property (nonatomic        ) size_t instanceSize; // 初始化size
+//@property (nonatomic        ) size_t mallocSize;   // 实际占用size
+
 @end
 
 NS_ASSUME_NONNULL_END

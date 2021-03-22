@@ -25,7 +25,10 @@
     self.navigationController.navigationBar.translucent = NO;
     
     __weak typeof(self) weakSelf = self;
-    [PoporWatchMemory watchVcIgnoreArray:@[@"UINavigationController", @"UIEditingOverlayViewController", @"UIInputWindowController"] warn:^(NSArray<PoporWatchMemoryEntity *> * _Nonnull array, NSMutableString * description) {
+    NSArray * array = @[@"UINavigationController", @"UIEditingOverlayViewController", @"UIInputWindowController",
+                        @"UICompatibilityInputViewController", @"UIPredictionViewController",
+    ];
+    [PoporWatchMemory watchVcIgnoreArray:array warn:^(NSArray<PoporWatchMemoryEntity *> * _Nonnull array, NSMutableString * description) {
         weakSelf.infoTV.text = description;
         
         NSLog(@": %@", description);

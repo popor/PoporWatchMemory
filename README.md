@@ -20,8 +20,8 @@ it, simply add the following line to your Podfile:
 pod 'PoporWatchMemory'
 
 NSArray * array = @[@"UINavigationController", @"UIEditingOverlayViewController", @"UIInputWindowController",
-@"UICompatibilityInputViewController", @"UIPredictionViewController",
-];
+@"UICompatibilityInputViewController", @"UIPredictionViewController",];
+
 [PoporWatchMemory watchVcIgnoreArray:array];
 
 ```

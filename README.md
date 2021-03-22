@@ -29,6 +29,10 @@ pod 'PoporWatchMemory'
 <img src="https://gitee.com/popor/PoporWatchMemory/raw/master/screen/1.png" width="60%" height="60%">
 </p>
 
+<p>
+<img src="/screen/1.png" width="60%" height="60%">
+</p>
+
 ## Author
 
 popor, 908891024@qq.com

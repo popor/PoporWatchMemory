@@ -7,12 +7,15 @@
 //
 
 #import "RootVC.h"
-#import "LeakVC.h"
+#import "LeakBlockVC.h"
+#import "LeakTimerVC.h"
+#import "LeakNcVC.h"
 
 #import "PoporWatchMemory.h"
 
 @interface RootVC ()
 
+@property (nonatomic, copy  ) NSArray * titleArray;
 @property (nonatomic, strong) UITextView * infoTV;
 
 @end
@@ -31,7 +34,6 @@
     
     [PoporWatchMemory watchVcIgnoreArray:array warn:^(NSArray<PoporWatchMemoryEntity *> * _Nonnull array, NSMutableString * _Nonnull description, NSString * _Nonnull className, NSString * _Nonnull pointer) {
         weakSelf.infoTV.text = description;
-        
         NSLog(@": %@ \n\n\n.", description);
     }];
     
@@ -44,37 +46,35 @@
 }
 
 - (void)addViews {
-    UIButton * normalBT;
-    UIButton * leakBT;
-    {
-        UIButton * oneBT = [UIButton buttonWithType:UIButtonTypeCustom];
-        oneBT.frame =  CGRectMake(40, 20, 100, 44);
-        [oneBT setTitle:@"Normal" forState:UIControlStateNormal];
-        [oneBT setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [oneBT setBackgroundColor:[UIColor brownColor]];
-        oneBT.layer.cornerRadius = 5;
-        oneBT.clipsToBounds      = YES;
+    self.titleArray = @[@"Normal", @"Block", @"Timer", @"Nc", @"Nc Post"];
+    UIButton * lastBT;
+    CGFloat left         = 10;
+    CGFloat gap          = 10;
+    CGFloat height       = 40;
+    NSInteger maxLineNum = 3;
+    CGFloat width        = (self.view.frame.size.width -left*2 -gap*(maxLineNum-1))/maxLineNum;
+    
+    for (NSInteger i = 0; i<self.titleArray.count; i++) {
+        UIButton * oneBT = ({
+            UIButton * oneBT = [UIButton buttonWithType:UIButtonTypeCustom];
+            
+            [oneBT setTitle:[NSString stringWithFormat:@"%@%i", self.titleArray[i], 0] forState:UIControlStateNormal];
+            [oneBT setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [oneBT setBackgroundColor:[UIColor brownColor]];
+            oneBT.layer.cornerRadius = 5;
+            oneBT.clipsToBounds      = YES;
+            
+            [self.view addSubview:oneBT];
+            
+            [oneBT addTarget:self action:@selector(btAction:) forControlEvents:UIControlEventTouchUpInside];
+            
+            oneBT;
+        });
+        oneBT.frame =  CGRectMake(left +(width +gap)*(i%maxLineNum), 20 + (height +10)*(i/maxLineNum), width, height);
         
-        [self.view addSubview:oneBT];
+        oneBT.tag = i;
+        lastBT = oneBT;
         
-        [oneBT addTarget:self action:@selector(btAction_normal) forControlEvents:UIControlEventTouchUpInside];
-        
-        normalBT = oneBT;
-    }
-    {
-        UIButton * oneBT = [UIButton buttonWithType:UIButtonTypeCustom];
-        oneBT.frame =  CGRectMake(180, 20, 100, 44);
-        [oneBT setTitle:@"Leak" forState:UIControlStateNormal];
-        [oneBT setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [oneBT setBackgroundColor:[UIColor brownColor]];
-        oneBT.layer.cornerRadius = 5;
-        oneBT.clipsToBounds      = YES;
-        
-        [self.view addSubview:oneBT];
-        
-        [oneBT addTarget:self action:@selector(btAction_leak) forControlEvents:UIControlEventTouchUpInside];
-        
-        leakBT = oneBT;
     }
     
     self.infoTV = ({
@@ -95,24 +95,58 @@
     });
     
     self.infoTV.frame =
-    CGRectMake(10, CGRectGetMaxY(leakBT.frame) +20,
+    CGRectMake(10, CGRectGetMaxY(lastBT.frame) +20,
                self.view.frame.size.width - 20,
-               self.view.frame.size.height -CGRectGetMaxY(leakBT.frame) -40 - self.navigationController.navigationBar.frame.size.height -40);
+               self.view.frame.size.height -CGRectGetMaxY(lastBT.frame) -40 - self.navigationController.navigationBar.frame.size.height -40);
     
 }
 
 
-- (void)btAction_normal {
-    UIViewController * vc = [UIViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
+- (void)btAction:(UIButton *)oneBT {
+    UIViewController * vc;
+    switch (oneBT.tag) {
+        case 0: {
+            vc = [UIViewController new];
+            vc.view.backgroundColor = UIColor.whiteColor;
+            break;
+        }
+        case 1: {
+            vc = [LeakBlockVC new];
+            break;
+        }
+        case 2: {
+            vc = [LeakTimerVC new];
+            break;
+        }
+        case 3: {
+            vc = [LeakNcVC new];
+            break;
+        }
+        case 4: {
+            //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ncAction) name:@"333" object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"333" object:nil];
+            return;
+        }
+        default:
+            break;
+    }
     
-    vc.title = @"Normal";
-    vc.view.backgroundColor = UIColor.whiteColor;
-}
-
-- (void)btAction_leak {
+    if (vc) {
+        [self.navigationController pushViewController:vc animated:YES];
+        
+        vc.title = self.titleArray[oneBT.tag];
+        
+        NSString * btTitle = oneBT.currentTitle;
+        NSString * title0  = self.titleArray[oneBT.tag];
+        NSString * title1  = [btTitle substringFromIndex:title0.length];
+        NSInteger index    = title1.integerValue +1;
+        
+        NSString * titleNew  = [NSString stringWithFormat:@"%@%li", self.titleArray[oneBT.tag], index];
+        
+        [oneBT setTitle:titleNew forState:UIControlStateNormal];
+        NSLog(@"%@ : %p", titleNew, vc);
+    }
     
-    [self.navigationController pushViewController:[LeakVC new] animated:YES];
 }
 
 @end

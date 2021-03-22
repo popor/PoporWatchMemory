@@ -6,23 +6,26 @@
 //  Copyright © 2021 popor. All rights reserved.
 //
 
-#import "LeakVC.h"
+#import "LeakBlockVC.h"
 
 typedef void(^LeakVCBlock)(void);
 
-@interface LeakVC ()
+@interface LeakBlockVC ()
 
 @property (nonatomic, copy  ) LeakVCBlock block;
 
 @end
 
-@implementation LeakVC
+@implementation LeakBlockVC
+
+- (void)dealloc {
+    NSLog(@"%s", __func__);
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.view.backgroundColor = UIColor.whiteColor;
-    self.title = @"Leak";
     
     [self addLeakCode];
 }

@@ -1,8 +1,8 @@
 //
-//  LeakVC.h
+//  LeakTimerVC.h
 //  PoporWatchMemory_Example
 //
-//  Created by popor on 2021/3/22.
+//  Created by 王凯庆 on 2021/3/22.
 //  Copyright © 2021 popor. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LeakVC : UIViewController
+@interface LeakTimerVC : UIViewController
 
 @end
 

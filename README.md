@@ -26,7 +26,7 @@ pod 'PoporWatchMemory'
 ```
 
 <p>
-<img src="https://gitee.com/popor/PoporWatchMemory/raw/master/screen/1.png" width="40%" height="40%">
+<img src="https://gitee.com/popor/PoporWatchMemory/raw/master/screen/1.png" width="60%" height="60%">
 </p>
 
 ## Author

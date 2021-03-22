@@ -19,7 +19,10 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'PoporWatchMemory'
 
-[PoporWatchMemory watchVcIgnoreArray:@[@"UINavigationController", @"UIEditingOverlayViewController", @"UIInputWindowController"]];
+NSArray * array = @[@"UINavigationController", @"UIEditingOverlayViewController", @"UIInputWindowController",
+@"UICompatibilityInputViewController", @"UIPredictionViewController",
+];
+[PoporWatchMemory watchVcIgnoreArray:array];
 
 ```
 

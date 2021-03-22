@@ -52,11 +52,7 @@
         [oneBT setTitle:@"Normal" forState:UIControlStateNormal];
         [oneBT setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [oneBT setBackgroundColor:[UIColor brownColor]];
-        
-        // oneBT.titleLabel.font = [UIFont systemFontOfSize:17];
         oneBT.layer.cornerRadius = 5;
-        oneBT.layer.borderColor  = [UIColor lightGrayColor].CGColor;
-        oneBT.layer.borderWidth  = 1;
         oneBT.clipsToBounds      = YES;
         
         [self.view addSubview:oneBT];
@@ -71,11 +67,7 @@
         [oneBT setTitle:@"Leak" forState:UIControlStateNormal];
         [oneBT setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [oneBT setBackgroundColor:[UIColor brownColor]];
-        
-        // oneBT.titleLabel.font = [UIFont systemFontOfSize:17];
         oneBT.layer.cornerRadius = 5;
-        oneBT.layer.borderColor  = [UIColor lightGrayColor].CGColor;
-        oneBT.layer.borderWidth  = 1;
         oneBT.clipsToBounds      = YES;
         
         [self.view addSubview:oneBT];

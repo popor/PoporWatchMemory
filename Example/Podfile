@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'PoporWatchMemory_Example' do
+  pod 'PoporWatchMemory', :path => '../'
+
+  target 'PoporWatchMemory_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

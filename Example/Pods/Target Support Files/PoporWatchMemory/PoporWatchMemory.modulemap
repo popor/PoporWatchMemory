@@ -1,0 +1,6 @@
+framework module PoporWatchMemory {
+  umbrella header "PoporWatchMemory-umbrella.h"
+
+  export *
+  module * { export * }
+}

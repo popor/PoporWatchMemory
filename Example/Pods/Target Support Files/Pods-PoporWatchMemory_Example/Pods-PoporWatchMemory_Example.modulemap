@@ -1,0 +1,6 @@
+framework module Pods_PoporWatchMemory_Example {
+  umbrella header "Pods-PoporWatchMemory_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

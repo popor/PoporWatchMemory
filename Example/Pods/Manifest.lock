@@ -1,5 +1,5 @@
 PODS:
-  - PoporWatchMemory (0.1.0)
+  - PoporWatchMemory (1.0)
 
 DEPENDENCIES:
   - PoporWatchMemory (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  PoporWatchMemory: 7464e567838f2afabfdfbfd921c1f9d2e27095d4
+  PoporWatchMemory: 84e75fd1f58a65739818681c9005a5f856694e63
 
 PODFILE CHECKSUM: bf59e1fe91a714721153e865ed998afb5c0dc10c
 

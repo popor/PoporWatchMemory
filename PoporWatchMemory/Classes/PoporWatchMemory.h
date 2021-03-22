@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class PoporWatchMemoryEntity;
 
-typedef void(^PoporWatchMemoryBlock)(NSArray<PoporWatchMemoryEntity *> * array);
+typedef void(^PoporWatchMemoryBlock)(NSArray<PoporWatchMemoryEntity *> * array, NSMutableString * description);
 
 @interface PoporWatchMemory : NSObject
 

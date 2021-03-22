@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		05D9113BDCD07F60EBD43379A125354F /* Pods-PoporWatchMemory_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CD595D612FDCEE831A746A1E6068E20 /* Pods-PoporWatchMemory_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		090B5B1CBFA000A4BB02B73FB8379CFA /* PoporWatchMemory-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B5615E942A9BBD9026B9D8EAFA360926 /* PoporWatchMemory-dummy.m */; };
 		12057D26F7A75D3E17DDF208B9ADD5F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		254041C34068C7FD0F3E40094C934624 /* PoporWatchMemory-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A0832D51D9C8EFC6D25701B167239541 /* PoporWatchMemory-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62A35C4E213299D809031A8A8A47143E /* Pods-PoporWatchMemory_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C8EAC4DA69C2C06A021ACC03961BA5 /* Pods-PoporWatchMemory_Tests-dummy.m */; };
-		7F31D3D1E328AE8FA7A34BBCDE6CDEDE /* PoporWatchMemory.m in Sources */ = {isa = PBXBuildFile; fileRef = BB05261D1D21A2583A2715BE5F60BED9 /* PoporWatchMemory.m */; };
-		C3A95217260844B200CB7C04 /* UIViewController+PoporWatchMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = C3A95215260844B200CB7C04 /* UIViewController+PoporWatchMemory.h */; };
-		C3A95218260844B200CB7C04 /* UIViewController+PoporWatchMemory.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A95216260844B200CB7C04 /* UIViewController+PoporWatchMemory.m */; };
+		8B635BEA17C1F5B1106C12C2C30D7E07 /* PoporWatchMemory.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A58547DB4EDE0F1E6A5618DC3298DD /* PoporWatchMemory.m */; };
+		9CD2ACB8C2201351B7D8A28BA3A1E433 /* PoporWatchMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = CCCA338CAD894D333057CFFCC34045AA /* PoporWatchMemory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A045EB91C93C19CEE88097EA9C2145EF /* PoporWatchMemory-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E7C96E06D7E49FA5B66B89A2D1D31D /* PoporWatchMemory-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD04C30C1D162D8BF3A5A20FF62A0ED9 /* Pods-PoporWatchMemory_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9FE8001D1AC4E6FD05CF9DC48E1FE5 /* Pods-PoporWatchMemory_Example-dummy.m */; };
 		D730190027A333C6AAB94B9990BB4C89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		D74C5935862013B5298498E4E2B01F1D /* PoporWatchMemory-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BC741E3D46D1392244C44B0A521D28 /* PoporWatchMemory-dummy.m */; };
+		D9F1DC9AC0A5E144F6C5FE49DECC79BD /* UIViewController+PoporWatchMemory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB06F14A159DBAF1F73B99DA22AB958 /* UIViewController+PoporWatchMemory.m */; };
 		E1F6CAC16B1BA59AF25867E16AA2F809 /* Pods-PoporWatchMemory_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A7CBDE44C1F428D7816FDD6BC5AAA986 /* Pods-PoporWatchMemory_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F5C2907D7FBA73B9BD8B92A32047A9C6 /* PoporWatchMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 38A95713F11351748651334CE29CFC65 /* PoporWatchMemory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E61A5DE46A04DA4CC58B605A73A78EF5 /* UIViewController+PoporWatchMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 074FD7C8648F0F3B299C9D4F40EFFC04 /* UIViewController+PoporWatchMemory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F6B9450337DEC05937785639B54292AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,40 +40,40 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0630C4A2D9ACC1AF1A916E67D14156CD /* PoporWatchMemory-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PoporWatchMemory-prefix.pch"; sourceTree = "<group>"; };
+		014C5F90C0670E21F1AB57A33AC23D08 /* PoporWatchMemory.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = PoporWatchMemory.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		06C71FB1399D5BB53FAF28AD37E78904 /* Pods-PoporWatchMemory_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PoporWatchMemory_Example.release.xcconfig"; sourceTree = "<group>"; };
+		074FD7C8648F0F3B299C9D4F40EFFC04 /* UIViewController+PoporWatchMemory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+PoporWatchMemory.h"; path = "PoporWatchMemory/Classes/UIViewController+PoporWatchMemory.h"; sourceTree = "<group>"; };
 		0F7CD89BD26A4C1FA14CA9E360FFEF60 /* Pods-PoporWatchMemory_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PoporWatchMemory_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		1861C33ADA296ABE219BCC839DBD4EDD /* PoporWatchMemory.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PoporWatchMemory.modulemap; sourceTree = "<group>"; };
-		18759CC44267DA70E8C9BEBBED33C6B8 /* PoporWatchMemory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PoporWatchMemory.release.xcconfig; sourceTree = "<group>"; };
-		1B40908A69664C36BC8AB340D1D1CE80 /* PoporWatchMemory.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = PoporWatchMemory.podspec; sourceTree = "<group>"; tabWidth = 2; };
+		15BC741E3D46D1392244C44B0A521D28 /* PoporWatchMemory-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PoporWatchMemory-dummy.m"; sourceTree = "<group>"; };
 		1CD595D612FDCEE831A746A1E6068E20 /* Pods-PoporWatchMemory_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PoporWatchMemory_Example-umbrella.h"; sourceTree = "<group>"; };
-		2C91BE7E9E165E2AA57D397F99DFC5E2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		38A95713F11351748651334CE29CFC65 /* PoporWatchMemory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoporWatchMemory.h; path = PoporWatchMemory/Classes/PoporWatchMemory.h; sourceTree = "<group>"; };
+		1DB06F14A159DBAF1F73B99DA22AB958 /* UIViewController+PoporWatchMemory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+PoporWatchMemory.m"; path = "PoporWatchMemory/Classes/UIViewController+PoporWatchMemory.m"; sourceTree = "<group>"; };
+		2AF84248ECD85ECD33F23168454E2F16 /* PoporWatchMemory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PoporWatchMemory.debug.xcconfig; sourceTree = "<group>"; };
 		3EBD775BDB6FAD0A39CDA62E1DAB0FAE /* Pods-PoporWatchMemory_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PoporWatchMemory_Tests-Info.plist"; sourceTree = "<group>"; };
-		6CCA11524264C4DC32A4330CEC88498E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		40E7C96E06D7E49FA5B66B89A2D1D31D /* PoporWatchMemory-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PoporWatchMemory-umbrella.h"; sourceTree = "<group>"; };
+		60EB78EE93C97B4B7F1A4515E713594C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		65A58547DB4EDE0F1E6A5618DC3298DD /* PoporWatchMemory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PoporWatchMemory.m; path = PoporWatchMemory/Classes/PoporWatchMemory.m; sourceTree = "<group>"; };
+		66DA9E80155A7D243A3B8014356FA880 /* PoporWatchMemory.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PoporWatchMemory.modulemap; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		73637A5BF4D0FC38C4C812129802DD8C /* Pods-PoporWatchMemory_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PoporWatchMemory_Example-Info.plist"; sourceTree = "<group>"; };
 		78A5136627BA7366E4E8432DBF8301DE /* Pods-PoporWatchMemory_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PoporWatchMemory_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		82FA9E9A7B68DD95CF2CF7A50A086831 /* PoporWatchMemory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PoporWatchMemory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82FA9E9A7B68DD95CF2CF7A50A086831 /* PoporWatchMemory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PoporWatchMemory.framework; path = PoporWatchMemory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		840D3E8764631196ADFD805746F43D5D /* Pods-PoporWatchMemory_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PoporWatchMemory_Example-frameworks.sh"; sourceTree = "<group>"; };
 		85477AC55A61E8C7960377A252C471E0 /* Pods-PoporWatchMemory_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PoporWatchMemory_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		87C8EAC4DA69C2C06A021ACC03961BA5 /* Pods-PoporWatchMemory_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PoporWatchMemory_Tests-dummy.m"; sourceTree = "<group>"; };
-		937A0773A21B9FB4A0AF9BBE1B567A8C /* PoporWatchMemory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PoporWatchMemory.debug.xcconfig; sourceTree = "<group>"; };
+		8B0791B85EF14A6A4B7CEF561A8193D4 /* PoporWatchMemory-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PoporWatchMemory-Info.plist"; sourceTree = "<group>"; };
+		94883404008018C0185179769D60DAC9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		9AA186A7D765D2A20EE3EF08ACF3D4C3 /* Pods-PoporWatchMemory_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PoporWatchMemory_Example.modulemap"; sourceTree = "<group>"; };
-		9B9FA354B37074B4C6817B16EEEB6872 /* PoporWatchMemory-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PoporWatchMemory-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9E632D869B9D8DFC474C58A776B2B79D /* Pods_PoporWatchMemory_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoporWatchMemory_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0832D51D9C8EFC6D25701B167239541 /* PoporWatchMemory-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PoporWatchMemory-umbrella.h"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E632D869B9D8DFC474C58A776B2B79D /* Pods_PoporWatchMemory_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PoporWatchMemory_Tests.framework; path = "Pods-PoporWatchMemory_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CBDE44C1F428D7816FDD6BC5AAA986 /* Pods-PoporWatchMemory_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PoporWatchMemory_Tests-umbrella.h"; sourceTree = "<group>"; };
 		AA9FE8001D1AC4E6FD05CF9DC48E1FE5 /* Pods-PoporWatchMemory_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PoporWatchMemory_Example-dummy.m"; sourceTree = "<group>"; };
-		B5615E942A9BBD9026B9D8EAFA360926 /* PoporWatchMemory-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PoporWatchMemory-dummy.m"; sourceTree = "<group>"; };
 		B889DE158D4670DBF35D1BEC21A87E1F /* Pods-PoporWatchMemory_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PoporWatchMemory_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BB05261D1D21A2583A2715BE5F60BED9 /* PoporWatchMemory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PoporWatchMemory.m; path = PoporWatchMemory/Classes/PoporWatchMemory.m; sourceTree = "<group>"; };
-		C3A95215260844B200CB7C04 /* UIViewController+PoporWatchMemory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIViewController+PoporWatchMemory.h"; path = "PoporWatchMemory/Classes/UIViewController+PoporWatchMemory.h"; sourceTree = "<group>"; };
-		C3A95216260844B200CB7C04 /* UIViewController+PoporWatchMemory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+PoporWatchMemory.m"; path = "PoporWatchMemory/Classes/UIViewController+PoporWatchMemory.m"; sourceTree = "<group>"; };
-		D9C383AB7F33AE844E9CD92795E7E9AF /* Pods_PoporWatchMemory_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoporWatchMemory_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCCA338CAD894D333057CFFCC34045AA /* PoporWatchMemory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoporWatchMemory.h; path = PoporWatchMemory/Classes/PoporWatchMemory.h; sourceTree = "<group>"; };
+		D3DA6AE6FC4B93EC7B2523751FB2F3B3 /* PoporWatchMemory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PoporWatchMemory.release.xcconfig; sourceTree = "<group>"; };
+		D9C383AB7F33AE844E9CD92795E7E9AF /* Pods_PoporWatchMemory_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PoporWatchMemory_Example.framework; path = "Pods-PoporWatchMemory_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2CD03CD3047FA6F6817588CB542DFB /* Pods-PoporWatchMemory_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PoporWatchMemory_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		DBEFC76FB7536AE22CA2C11DE8298E49 /* Pods-PoporWatchMemory_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PoporWatchMemory_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		E12EE5C72D353A41631AA9F411B90560 /* PoporWatchMemory-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PoporWatchMemory-prefix.pch"; sourceTree = "<group>"; };
 		E6D8671505496799FA937C038463AD55 /* Pods-PoporWatchMemory_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PoporWatchMemory_Tests.modulemap"; sourceTree = "<group>"; };
 		E9ABD605710E5B468DD33FC91E279578 /* Pods-PoporWatchMemory_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PoporWatchMemory_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,36 +106,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01A18F0B1D4877D169E7CDE6334CDEDC /* PoporWatchMemory */ = {
-			isa = PBXGroup;
-			children = (
-				38A95713F11351748651334CE29CFC65 /* PoporWatchMemory.h */,
-				BB05261D1D21A2583A2715BE5F60BED9 /* PoporWatchMemory.m */,
-				C3A95215260844B200CB7C04 /* UIViewController+PoporWatchMemory.h */,
-				C3A95216260844B200CB7C04 /* UIViewController+PoporWatchMemory.m */,
-				4B777D1C24D92DE5EAC4E8564BA1FD06 /* Pod */,
-				754B856521BF1ADDF462E885103FE73D /* Support Files */,
-			);
-			name = PoporWatchMemory;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		17D45434A50357E5E13A801DA9A94D2F /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				01A18F0B1D4877D169E7CDE6334CDEDC /* PoporWatchMemory */,
+				296624DADD88FC2C27666D692A919891 /* PoporWatchMemory */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		4B777D1C24D92DE5EAC4E8564BA1FD06 /* Pod */ = {
+		1A9DF10133D247D6FB89803BE8E0A7EF /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				6CCA11524264C4DC32A4330CEC88498E /* LICENSE */,
-				1B40908A69664C36BC8AB340D1D1CE80 /* PoporWatchMemory.podspec */,
-				2C91BE7E9E165E2AA57D397F99DFC5E2 /* README.md */,
+				60EB78EE93C97B4B7F1A4515E713594C /* LICENSE */,
+				014C5F90C0670E21F1AB57A33AC23D08 /* PoporWatchMemory.podspec */,
+				94883404008018C0185179769D60DAC9 /* README.md */,
 			);
 			name = Pod;
+			sourceTree = "<group>";
+		};
+		20BA445471599CA0369F311683E4356A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				66DA9E80155A7D243A3B8014356FA880 /* PoporWatchMemory.modulemap */,
+				15BC741E3D46D1392244C44B0A521D28 /* PoporWatchMemory-dummy.m */,
+				8B0791B85EF14A6A4B7CEF561A8193D4 /* PoporWatchMemory-Info.plist */,
+				E12EE5C72D353A41631AA9F411B90560 /* PoporWatchMemory-prefix.pch */,
+				40E7C96E06D7E49FA5B66B89A2D1D31D /* PoporWatchMemory-umbrella.h */,
+				2AF84248ECD85ECD33F23168454E2F16 /* PoporWatchMemory.debug.xcconfig */,
+				D3DA6AE6FC4B93EC7B2523751FB2F3B3 /* PoporWatchMemory.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/PoporWatchMemory";
+			sourceTree = "<group>";
+		};
+		296624DADD88FC2C27666D692A919891 /* PoporWatchMemory */ = {
+			isa = PBXGroup;
+			children = (
+				CCCA338CAD894D333057CFFCC34045AA /* PoporWatchMemory.h */,
+				65A58547DB4EDE0F1E6A5618DC3298DD /* PoporWatchMemory.m */,
+				074FD7C8648F0F3B299C9D4F40EFFC04 /* UIViewController+PoporWatchMemory.h */,
+				1DB06F14A159DBAF1F73B99DA22AB958 /* UIViewController+PoporWatchMemory.m */,
+				1A9DF10133D247D6FB89803BE8E0A7EF /* Pod */,
+				20BA445471599CA0369F311683E4356A /* Support Files */,
+			);
+			name = PoporWatchMemory;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -144,21 +159,6 @@
 				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		754B856521BF1ADDF462E885103FE73D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1861C33ADA296ABE219BCC839DBD4EDD /* PoporWatchMemory.modulemap */,
-				B5615E942A9BBD9026B9D8EAFA360926 /* PoporWatchMemory-dummy.m */,
-				9B9FA354B37074B4C6817B16EEEB6872 /* PoporWatchMemory-Info.plist */,
-				0630C4A2D9ACC1AF1A916E67D14156CD /* PoporWatchMemory-prefix.pch */,
-				A0832D51D9C8EFC6D25701B167239541 /* PoporWatchMemory-umbrella.h */,
-				937A0773A21B9FB4A0AF9BBE1B567A8C /* PoporWatchMemory.debug.xcconfig */,
-				18759CC44267DA70E8C9BEBBED33C6B8 /* PoporWatchMemory.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/PoporWatchMemory";
 			sourceTree = "<group>";
 		};
 		B6ACA072BF475B854B1437C4FF0ACF26 /* Targets Support Files */ = {
@@ -251,13 +251,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FD4109DB67C9413E8F8833BD7199C48D /* Headers */ = {
+		B95C0EEB636C72F6700CF017D3BA5B92 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				254041C34068C7FD0F3E40094C934624 /* PoporWatchMemory-umbrella.h in Headers */,
-				C3A95217260844B200CB7C04 /* UIViewController+PoporWatchMemory.h in Headers */,
-				F5C2907D7FBA73B9BD8B92A32047A9C6 /* PoporWatchMemory.h in Headers */,
+				A045EB91C93C19CEE88097EA9C2145EF /* PoporWatchMemory-umbrella.h in Headers */,
+				9CD2ACB8C2201351B7D8A28BA3A1E433 /* PoporWatchMemory.h in Headers */,
+				E61A5DE46A04DA4CC58B605A73A78EF5 /* UIViewController+PoporWatchMemory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,8 +268,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 916B9B25334B6900BB7A585EB1FB819D /* Build configuration list for PBXNativeTarget "PoporWatchMemory" */;
 			buildPhases = (
-				FD4109DB67C9413E8F8833BD7199C48D /* Headers */,
-				DBB80BC4992B9707FA4778977BFF1251 /* Sources */,
+				B95C0EEB636C72F6700CF017D3BA5B92 /* Headers */,
+				E837112E63984B42FE27E0E60A44964D /* Sources */,
 				7E9561F8290775C8274EEC0D41B75E07 /* Frameworks */,
 				C85B816518C33BDA0A65931746215028 /* Resources */,
 			);
@@ -390,13 +390,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DBB80BC4992B9707FA4778977BFF1251 /* Sources */ = {
+		E837112E63984B42FE27E0E60A44964D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				090B5B1CBFA000A4BB02B73FB8379CFA /* PoporWatchMemory-dummy.m in Sources */,
-				7F31D3D1E328AE8FA7A34BBCDE6CDEDE /* PoporWatchMemory.m in Sources */,
-				C3A95218260844B200CB7C04 /* UIViewController+PoporWatchMemory.m in Sources */,
+				D74C5935862013B5298498E4E2B01F1D /* PoporWatchMemory-dummy.m in Sources */,
+				8B635BEA17C1F5B1106C12C2C30D7E07 /* PoporWatchMemory.m in Sources */,
+				D9F1DC9AC0A5E144F6C5FE49DECC79BD /* UIViewController+PoporWatchMemory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,7 +552,7 @@
 		};
 		6EFF075E1F1A399083FCDE104B40BDA9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18759CC44267DA70E8C9BEBBED33C6B8 /* PoporWatchMemory.release.xcconfig */;
+			baseConfigurationReference = D3DA6AE6FC4B93EC7B2523751FB2F3B3 /* PoporWatchMemory.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -615,7 +615,7 @@
 		};
 		9C240D0501DE1D048C0E77F824D439FF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 937A0773A21B9FB4A0AF9BBE1B567A8C /* PoporWatchMemory.debug.xcconfig */;
+			baseConfigurationReference = 2AF84248ECD85ECD33F23168454E2F16 /* PoporWatchMemory.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -730,7 +730,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

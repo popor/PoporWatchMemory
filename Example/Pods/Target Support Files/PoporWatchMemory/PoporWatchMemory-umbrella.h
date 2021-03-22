@@ -10,8 +10,8 @@
 #endif
 #endif
 
-#import "WatchMemory.h"
-#import "WatchMemoryEntity.h"
+#import "PoporWatchMemory.h"
+#import "UIViewController+PoporWatchMemory.h"
 
 FOUNDATION_EXPORT double PoporWatchMemoryVersionNumber;
 FOUNDATION_EXPORT const unsigned char PoporWatchMemoryVersionString[];

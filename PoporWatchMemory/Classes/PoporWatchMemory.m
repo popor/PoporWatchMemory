@@ -13,7 +13,6 @@
 
 static NSMutableDictionary * VcPointerDic;   // 指针地址Class
 static NSArray             * VcIgnoreArray;
-static BOOL                  WaitChecking;
 static PoporWatchMemoryBlock WarmBlock;
 
 @implementation PoporWatchMemoryEntity @end
@@ -116,8 +115,9 @@ static PoporWatchMemoryBlock WarmBlock;
 
 #pragma mark - tool
 + (void)checkDic:(NSMutableDictionary *)dic className:(NSString *)className pointer:(NSString *)pointer {
-    NSLog(@"---------------------------------");
-    NSLog(@"❌❌[%@]异常, 地址: %@, 剩余的vc总数: %li", className, pointer, dic.allKeys.count);
+    NSMutableString * desc = [NSMutableString new];
+    [desc appendFormat:@"❌❌\n[%@]异常, 地址: %@, 剩余的vc总数: %li", className, pointer, dic.allKeys.count];
+    
     NSMutableArray * array = [NSMutableArray new];
     NSArray * keyArray = dic.allKeys;
     for (NSString * pointer in keyArray) {
@@ -133,18 +133,19 @@ static PoporWatchMemoryBlock WarmBlock;
     }];
     for (PoporWatchMemoryEntity * entity in result) {
         if ([entity.pointer isEqualToString:pointer]) {
-            NSLog(@"⚠️%@ \t: ⚠️%@", entity.className, entity.pointer);
+            [desc appendFormat:@"\n⚠️%@ \t: ⚠️%@", entity.className, entity.pointer];
         } else if([entity.className isEqualToString:className]) {
-            NSLog(@"⚠️%@ \t: %@", entity.className, entity.pointer);
+            [desc appendFormat:@"\n⚠️%@ \t: %@", entity.className, entity.pointer];
         } else {
-            NSLog(@"%@ \t: %@", entity.className, entity.pointer);
+            [desc appendFormat:@"\n%@ \t: %@", entity.className, entity.pointer];
         }
     }
-    NSLog(@"---------------------------------\n\n.");
     
-    if (WarmBlock) {
-        WarmBlock(result);
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (WarmBlock) {
+            WarmBlock(result, desc);
+        }
+    });
 }
 
 

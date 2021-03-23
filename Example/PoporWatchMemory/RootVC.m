@@ -11,6 +11,7 @@
 #import "LeakTimerVC.h"
 #import "LeakNcVC.h"
 #import "LeakJsVC.h"
+#import "LeakOtherVC.h"
 
 #import "PoporWatchMemory.h"
 
@@ -33,9 +34,9 @@
                         @"UICompatibilityInputViewController", @"UIPredictionViewController",
     ];
     
-    [PoporWatchMemory watchVcIgnoreArray:array warn:^(NSArray<PoporWatchMemoryEntity *> * _Nonnull array, NSMutableString * _Nonnull description, NSString * _Nonnull className, NSString * _Nonnull pointer) {
-        weakSelf.infoTV.text = description;
-        NSLog(@": %@ \n\n\n.", description);
+    [PoporWatchMemory watchVcIgnoreArray:array att:YES warn:^(NSArray<PoporWatchMemoryEntity *> * _Nonnull array, NSMutableAttributedString * descAtt, NSString * _Nonnull className, NSString * _Nonnull pointer) {
+        weakSelf.infoTV.attributedText = descAtt;
+        NSLog(@": %@ \n\n\n.", descAtt.string);
     }];
     
     // 或者
@@ -47,11 +48,11 @@
 }
 
 - (void)addViews {
-    self.titleArray = @[@"Normal", @"Block", @"Timer", @"Nc", @"Js"];
+    self.titleArray = @[@"Normal", @"Block", @"Timer", @"Nc", @"Js", @"Other"];
     UIButton * lastBT;
     CGFloat left         = 10;
     CGFloat gap          = 10;
-    CGFloat height       = 40;
+    CGFloat height       = 30;
     NSInteger maxLineNum = 3;
     CGFloat width        = (self.view.frame.size.width -left*2 -gap*(maxLineNum-1))/maxLineNum;
     
@@ -71,7 +72,7 @@
             
             oneBT;
         });
-        oneBT.frame =  CGRectMake(left +(width +gap)*(i%maxLineNum), 20 + (height +10)*(i/maxLineNum), width, height);
+        oneBT.frame =  CGRectMake(left +(width +gap)*(i%maxLineNum), 10 + (height +10)*(i/maxLineNum), width, height);
         
         oneBT.tag = i;
         lastBT = oneBT;
@@ -96,7 +97,7 @@
     });
     
     self.infoTV.frame =
-    CGRectMake(10, CGRectGetMaxY(lastBT.frame) +20,
+    CGRectMake(10, CGRectGetMaxY(lastBT.frame) +10,
                self.view.frame.size.width - 20,
                self.view.frame.size.height -CGRectGetMaxY(lastBT.frame) -40 - self.navigationController.navigationBar.frame.size.height -40);
     
@@ -127,6 +128,11 @@
             vc = [LeakJsVC new];
             break;
         }
+        case 5: {
+            vc = [LeakOtherVC new];
+            break;
+        }
+            
         default:
             break;
     }

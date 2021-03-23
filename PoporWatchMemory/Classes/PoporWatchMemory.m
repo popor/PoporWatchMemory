@@ -15,18 +15,21 @@
 static NSMutableDictionary * VcPointerDic;   // 指针地址Class
 static NSArray             * VcIgnoreArray;
 static PoporWatchMemoryBlock WarmBlock;
+static BOOL                  UseAtt;
 
 @implementation PoporWatchMemoryEntity @end
 
 @implementation PoporWatchMemory
 
 + (void)watchVcIgnoreArray:(NSArray * _Nullable)array {
-    [self watchVcIgnoreArray:array warn:nil];
+    [self watchVcIgnoreArray:array att:NO warn:nil];
 }
 
-+ (void)watchVcIgnoreArray:(NSArray * _Nullable)array warn:(PoporWatchMemoryBlock _Nullable)warmBlock {
++ (void)watchVcIgnoreArray:(NSArray * _Nullable)array att:(BOOL)useAtt warn:(PoporWatchMemoryBlock _Nullable)warmBlock
+{
     {
         VcIgnoreArray = array;
+        UseAtt        = useAtt;
         WarmBlock     = warmBlock;
         // 暂且不考虑清除之前记录情况.
         // NSArray * keyArray = VcPointerDic.allKeys;
@@ -109,7 +112,11 @@ static PoporWatchMemoryBlock WarmBlock;
         __weak typeof(vc) weakVC = vc;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             if (weakVC) {
-                [PoporWatchMemory checkDic:VcPointerDic className:className pointer:pointer];
+                if (UseAtt) {
+                    [PoporWatchMemory checkDic_att:VcPointerDic className:className pointer:pointer];
+                } else {
+                    [PoporWatchMemory checkDic_str:VcPointerDic className:className pointer:pointer];
+                }
             } else {
                 [VcPointerDic removeObjectForKey:pointer]; //NSLog(@"✅[%@] 析构", VcPointerDic[pointer]);
             }
@@ -126,35 +133,109 @@ static PoporWatchMemoryBlock WarmBlock;
     }
 }
 
-+ (void)checkDic:(NSMutableDictionary *)dic className:(NSString *)className pointer:(NSString *)pointer {
-    NSMutableString * desc = [NSMutableString new];
-    [desc appendFormat:@"❌❌\n[%@]异常, 地址: %@, 剩余的vc总数: %li", className, pointer, dic.allKeys.count];
++ (void)checkDic_att:(NSMutableDictionary *)dic className:(NSString *)className pointer:(NSString *)pointer {
+    UIFont  * font        = [UIFont  systemFontOfSize:15];
+    UIColor * normalColor = [UIColor blackColor];
+    UIColor * warmColor   = [UIColor redColor];
+    NSMutableAttributedString * att = [NSMutableAttributedString new];
+    
+    
+    void (^ attPointerBlock)(NSString *, UIColor *) = ^(NSString * string, UIColor * color){
+        NSString * editString = [NSString stringWithFormat:@"%-16s", [string UTF8String]];
+        [self att:att string:editString font:font color:color];
+    };
+    void (^ attBlock)(NSString *, UIColor *) = ^(NSString * string, UIColor * color){
+        [self att:att string:string font:font color:color];
+    };
+    
+    attBlock([NSString stringWithFormat:@"❌❌ VC数量: %li, 最后位于\n", dic.allKeys.count], normalColor);
+    attBlock(pointer, warmColor);
+    attBlock(@"   :", normalColor);
+    attBlock(className, warmColor);
+    
+    attBlock([NSString stringWithFormat:@"\n%@", self.lineString], normalColor);
     
     NSArray * originArray = dic.allValues;
     NSArray * result = [originArray sortedArrayUsingComparator:^NSComparisonResult(PoporWatchMemoryEntity * _Nonnull obj1, PoporWatchMemoryEntity * _Nonnull obj2) {
         return [obj1.className compare:obj2.className];
     }];
+    
     for (PoporWatchMemoryEntity * entity in result) {
         if ([entity.pointer isEqualToString:pointer]) {
-            [desc appendFormat:@"\n⚠️%@ \t: ⚠️%@", entity.className, entity.pointer];
+            attBlock(@"\n", normalColor);
+            attPointerBlock(entity.pointer, warmColor);
+            attBlock(@" : ", normalColor);
+            attBlock([NSString stringWithFormat:@"%@ ⚠️", entity.className], warmColor);
         } else if([entity.className isEqualToString:className]) {
-            [desc appendFormat:@"\n⚠️%@ \t: %@", entity.className, entity.pointer];
+            attBlock(@"\n", normalColor);
+            attPointerBlock(entity.pointer, normalColor);
+            attBlock(@" : ", normalColor);
+            attBlock([NSString stringWithFormat:@"%@ ⚠️", entity.className], warmColor);
         } else {
-            [desc appendFormat:@"\n%@ \t: %@", entity.className, entity.pointer];
+            attBlock(@"\n", normalColor);
+            attPointerBlock(entity.pointer, normalColor);
+            attBlock(@" : ", normalColor);
+            attBlock(entity.className, normalColor);
         }
-        
-        //[desc appendFormat:@"\n%@ \t: %@, size:%zd", entity.className, entity.pointer, entity.mallocSize];
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
         if (WarmBlock) {
-            WarmBlock(result, desc, className, pointer);
+            WarmBlock(result, att, className, pointer);
         } else {
-            NSLog(@"\n-----------------------\n\n%@\n\n-----------------------", desc);
+            NSLog(@"\n%@\n\n%@\n\n%@", self.lineString, att.string, self.lineString);
         }
     });
 }
 
++ (void)checkDic_str:(NSMutableDictionary *)dic className:(NSString *)className pointer:(NSString *)pointer {
+    
+    NSMutableString * text = [NSMutableString new];
+    [text appendFormat:@"❌❌ VC数量: %li, 最后位于\n%@   :%@\n%@", dic.allKeys.count, pointer, className, self.lineString];
+    
+    NSArray * originArray = dic.allValues;
+    NSArray * result = [originArray sortedArrayUsingComparator:^NSComparisonResult(PoporWatchMemoryEntity * _Nonnull obj1, PoporWatchMemoryEntity * _Nonnull obj2) {
+        return [obj1.className compare:obj2.className];
+    }];
+    
+    for (PoporWatchMemoryEntity * entity in result) {
+        if ([entity.pointer isEqualToString:pointer]) {
+            [text appendFormat:@"\n%-16s : %@ ⚠️", entity.pointer.UTF8String, entity.className];
+        } else if([entity.className isEqualToString:className]) {
+            [text appendFormat:@"\n%-16s : %@ ⚠️", entity.pointer.UTF8String, entity.className];
+        } else {
+            [text appendFormat:@"\n%-16s : %@", entity.pointer.UTF8String, entity.className];
+        }
+    }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (WarmBlock) {
+            WarmBlock(result, [[NSMutableAttributedString alloc] initWithString:text], className, pointer);
+        } else {
+            NSLog(@"\n%@\n\n%@\n\n%@", self.lineString, text, self.lineString);
+        }
+    });
+}
+
++ (NSString *)lineString {
+    return @"-------------------------------------";
+}
+
++ (void)att:(NSMutableAttributedString *)att string:(NSString * _Nullable)string font:(UIFont * _Nullable)font color:(UIColor * _Nullable)color
+{
+    if (!string) {
+        return;
+    }
+    NSRange range = NSMakeRange(0, string.length);
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:string];
+    if (font) {
+        [attString addAttribute:NSFontAttributeName value:font range:range];
+    }
+    if (color) {
+        [attString addAttribute:NSForegroundColorAttributeName value:color range:range];
+    }
+    [att appendAttributedString:attString];
+}
 
 // 交换 NSObject 方法
 + (void)class:(Class)class oldSelector:(SEL _Nonnull)originalSelector newSelector:(SEL _Nonnull)swizzledSelector

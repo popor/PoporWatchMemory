@@ -12,14 +12,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class PoporWatchMemoryEntity;
 
-typedef void(^PoporWatchMemoryBlock)(NSArray<PoporWatchMemoryEntity *> * array, NSMutableString * description, NSString * className, NSString * pointer);
+typedef void(^PoporWatchMemoryBlock)(NSArray<PoporWatchMemoryEntity *> * array, NSMutableAttributedString * descAtt, NSString * className, NSString * pointer);
 
 @interface PoporWatchMemory : NSObject
 
 // [PoporWatchMemory watchVcIgnoreArray:@[@"UINavigationController"]];
 + (void)watchVcIgnoreArray:(NSArray * _Nullable)array;
++ (void)watchVcIgnoreArray:(NSArray * _Nullable)array att:(BOOL)useAtt warn:(PoporWatchMemoryBlock _Nullable)warmBlock;
 
-+ (void)watchVcIgnoreArray:(NSArray * _Nullable)array warn:(PoporWatchMemoryBlock _Nullable)warmBlock;
+
++ (NSString *)lineString;
+
++ (void)att:(NSMutableAttributedString *)att string:(NSString * _Nullable)string font:(UIFont * _Nullable)font color:(UIColor * _Nullable)color;
++ (void)class:(Class)class oldSelector:(SEL _Nonnull)originalSelector newSelector:(SEL _Nonnull)swizzledSelector;
 
 @end
 

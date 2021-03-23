@@ -24,6 +24,7 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		C34087CC2609769D001BCE7A /* LeakJsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C34087CB2609769D001BCE7A /* LeakJsVC.m */; };
+		C34087D526097AB9001BCE7A /* LeakOtherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C34087D426097AB9001BCE7A /* LeakOtherVC.m */; };
 		C3A952102608423E00CB7C04 /* LeakBlockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9520F2608423E00CB7C04 /* LeakBlockVC.m */; };
 		DE6EF1D5A12511B513DF7B62 /* Pods_PoporWatchMemory_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C82A1CC8207DBC7A0225DE1 /* Pods_PoporWatchMemory_Tests.framework */; };
 		E424FD7F2608BFBB00A7C1A7 /* LeakNcVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E424FD7E2608BFBB00A7C1A7 /* LeakNcVC.m */; };
@@ -71,6 +72,8 @@
 		A952897804900B88E8BA5627 /* Pods-PoporWatchMemory_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoporWatchMemory_Tests.release.xcconfig"; path = "Target Support Files/Pods-PoporWatchMemory_Tests/Pods-PoporWatchMemory_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C34087CA2609769D001BCE7A /* LeakJsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeakJsVC.h; sourceTree = "<group>"; };
 		C34087CB2609769D001BCE7A /* LeakJsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeakJsVC.m; sourceTree = "<group>"; };
+		C34087D326097AB9001BCE7A /* LeakOtherVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeakOtherVC.h; sourceTree = "<group>"; };
+		C34087D426097AB9001BCE7A /* LeakOtherVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeakOtherVC.m; sourceTree = "<group>"; };
 		C3A9520E2608423E00CB7C04 /* LeakBlockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeakBlockVC.h; sourceTree = "<group>"; };
 		C3A9520F2608423E00CB7C04 /* LeakBlockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeakBlockVC.m; sourceTree = "<group>"; };
 		CEF952FBB72EBCC7C8C3F52F /* Pods-PoporWatchMemory_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoporWatchMemory_Example.debug.xcconfig"; path = "Target Support Files/Pods-PoporWatchMemory_Example/Pods-PoporWatchMemory_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +154,7 @@
 				E424FD822608BFBF00A7C1A7 /* LeakTimerVC */,
 				E424FD7A2608BF9100A7C1A7 /* LeakNcVC */,
 				C34087C926097688001BCE7A /* LeakJsVC */,
+				C34087D826097ABF001BCE7A /* LeakOtherVC */,
 			);
 			name = "Example for PoporWatchMemory";
 			path = PoporWatchMemory;
@@ -203,6 +207,15 @@
 				C34087CB2609769D001BCE7A /* LeakJsVC.m */,
 			);
 			name = LeakJsVC;
+			sourceTree = "<group>";
+		};
+		C34087D826097ABF001BCE7A /* LeakOtherVC */ = {
+			isa = PBXGroup;
+			children = (
+				C34087D326097AB9001BCE7A /* LeakOtherVC.h */,
+				C34087D426097AB9001BCE7A /* LeakOtherVC.m */,
+			);
+			name = LeakOtherVC;
 			sourceTree = "<group>";
 		};
 		C3A95205260841F500CB7C04 /* other */ = {
@@ -440,6 +453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C34087D526097AB9001BCE7A /* LeakOtherVC.m in Sources */,
 				E424FD7F2608BFBB00A7C1A7 /* LeakNcVC.m in Sources */,
 				6003F59E195388D20070C39A /* PWMAppDelegate.m in Sources */,
 				C3A952102608423E00CB7C04 /* LeakBlockVC.m in Sources */,

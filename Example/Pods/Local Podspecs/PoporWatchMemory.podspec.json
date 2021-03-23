@@ -1,6 +1,6 @@
 {
   "name": "PoporWatchMemory",
-  "version": "1.1",
+  "version": "1.2",
   "summary": "基于 UIViewController 的内存泄露监测, 可以设定忽略的class,",
   "homepage": "https://gitee.com/popor/PoporWatchMemory",
   "license": {
@@ -12,10 +12,10 @@
   },
   "source": {
     "git": "https://gitee.com/popor/PoporWatchMemory.git",
-    "tag": "1.1"
+    "tag": "1.2"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "8.0"
   },
   "source_files": "PoporWatchMemory/Classes/**/*"
 }

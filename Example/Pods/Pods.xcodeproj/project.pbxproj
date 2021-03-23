@@ -484,6 +484,36 @@
 			};
 			name = Debug;
 		};
+		32FC1AE2143EDA5DA3F6575616514A4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AF84248ECD85ECD33F23168454E2F16 /* PoporWatchMemory.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PoporWatchMemory/PoporWatchMemory-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PoporWatchMemory/PoporWatchMemory-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PoporWatchMemory/PoporWatchMemory.modulemap";
+				PRODUCT_MODULE_NAME = PoporWatchMemory;
+				PRODUCT_NAME = PoporWatchMemory;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		41F9E547D22F68BA15B81A346AB109F5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06C71FB1399D5BB53FAF28AD37E78904 /* Pods-PoporWatchMemory_Example.release.xcconfig */;
@@ -550,37 +580,6 @@
 			};
 			name = Release;
 		};
-		6EFF075E1F1A399083FCDE104B40BDA9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3DA6AE6FC4B93EC7B2523751FB2F3B3 /* PoporWatchMemory.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PoporWatchMemory/PoporWatchMemory-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PoporWatchMemory/PoporWatchMemory-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PoporWatchMemory/PoporWatchMemory.modulemap";
-				PRODUCT_MODULE_NAME = PoporWatchMemory;
-				PRODUCT_NAME = PoporWatchMemory;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		8A612E1C0D5A005C087909BEBF169F4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 85477AC55A61E8C7960377A252C471E0 /* Pods-PoporWatchMemory_Tests.debug.xcconfig */;
@@ -613,9 +612,9 @@
 			};
 			name = Debug;
 		};
-		9C240D0501DE1D048C0E77F824D439FF /* Debug */ = {
+		A18E4934F3F37DAA37A6F025D06B1749 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2AF84248ECD85ECD33F23168454E2F16 /* PoporWatchMemory.debug.xcconfig */;
+			baseConfigurationReference = D3DA6AE6FC4B93EC7B2523751FB2F3B3 /* PoporWatchMemory.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -628,7 +627,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/PoporWatchMemory/PoporWatchMemory-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/PoporWatchMemory/PoporWatchMemory-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/PoporWatchMemory/PoporWatchMemory.modulemap";
 				PRODUCT_MODULE_NAME = PoporWatchMemory;
@@ -638,10 +637,11 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		BC1A74AB93A45F56C4B59102F9867E6C /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -761,8 +761,8 @@
 		916B9B25334B6900BB7A585EB1FB819D /* Build configuration list for PBXNativeTarget "PoporWatchMemory" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9C240D0501DE1D048C0E77F824D439FF /* Debug */,
-				6EFF075E1F1A399083FCDE104B40BDA9 /* Release */,
+				32FC1AE2143EDA5DA3F6575616514A4B /* Debug */,
+				A18E4934F3F37DAA37A6F025D06B1749 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

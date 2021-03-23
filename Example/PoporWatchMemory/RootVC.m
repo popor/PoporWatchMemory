@@ -10,6 +10,7 @@
 #import "LeakBlockVC.h"
 #import "LeakTimerVC.h"
 #import "LeakNcVC.h"
+#import "LeakJsVC.h"
 
 #import "PoporWatchMemory.h"
 
@@ -46,7 +47,7 @@
 }
 
 - (void)addViews {
-    self.titleArray = @[@"Normal", @"Block", @"Timer", @"Nc", @"Nc Post"];
+    self.titleArray = @[@"Normal", @"Block", @"Timer", @"Nc", @"Js"];
     UIButton * lastBT;
     CGFloat left         = 10;
     CGFloat gap          = 10;
@@ -123,9 +124,8 @@
             break;
         }
         case 4: {
-            //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ncAction) name:@"333" object:nil];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"333" object:nil];
-            return;
+            vc = [LeakJsVC new];
+            break;
         }
         default:
             break;
